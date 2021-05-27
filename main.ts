@@ -19,7 +19,7 @@
  * ERROR state for if somehow no valid number was chosen, for example in case of corruption of memory.
  */
 input.onGesture(Gesture.Shake, function () {
-    number = randint(1, 6)
+    number = randint(1, 4)
     for (let index = 0; index < 2; index++) {
         basic.clearScreen()
         if (number == 1) {
@@ -34,7 +34,7 @@ input.onGesture(Gesture.Shake, function () {
             pins.digitalWritePin(DigitalPin.P1, 0)
             music.playMelody("F A C5 - - - - - ", 120)
             pins.digitalWritePin(DigitalPin.P0, 0)
-            pins.servoWritePin(AnalogPin.P1, 0)
+            pins.servoWritePin(AnalogPin.P1, 180)
         } else if (number == 2) {
             basic.showLeds(`
                 # # . # #
@@ -47,7 +47,7 @@ input.onGesture(Gesture.Shake, function () {
             pins.digitalWritePin(DigitalPin.P1, 0)
             music.playMelody("F A C5 - - - - - ", 120)
             pins.digitalWritePin(DigitalPin.P0, 0)
-            pins.servoWritePin(AnalogPin.P1, 45)
+            pins.servoWritePin(AnalogPin.P1, 135)
         } else if (number == 3) {
             basic.showLeds(`
                 # # . # #
@@ -60,8 +60,8 @@ input.onGesture(Gesture.Shake, function () {
             pins.digitalWritePin(DigitalPin.P1, 0)
             music.playMelody("F E F E - - - - ", 120)
             pins.digitalWritePin(DigitalPin.P0, 0)
-            pins.servoWritePin(AnalogPin.P1, 135)
-        } else if (number == 5) {
+            pins.servoWritePin(AnalogPin.P1, 45)
+        } else if (number == 4) {
             basic.showLeds(`
                 # # . # #
                 # # . # #
@@ -73,7 +73,7 @@ input.onGesture(Gesture.Shake, function () {
             pins.digitalWritePin(DigitalPin.P1, 0)
             music.playMelody("D C C - - - - - ", 120)
             pins.digitalWritePin(DigitalPin.P0, 0)
-            pins.servoWritePin(AnalogPin.P1, 180)
+            pins.servoWritePin(AnalogPin.P1, 0)
         } else {
             basic.showString("ERROR!")
         }
